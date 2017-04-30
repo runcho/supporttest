@@ -1,3 +1,3 @@
 # supporttest
-testing supportsite
+testing supportsite <cr>
 ha ha ha
