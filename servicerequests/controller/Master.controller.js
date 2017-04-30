@@ -255,7 +255,6 @@ sap.ui.define([
 			var startupParams = this.component.startupParams;
 			if (window.location.hash.substring(1).indexOf("createNewTicket=true") > -1 || startupParams.createNewTicket === "true") {
 				if (!this.initialCreateTicketOpened) {
-					this.initialCreateTicketOpened = true;
 					var newSiteProperties = window.location.hash.substring(1).split('?')[1];
 					this.onAdd(this.splitData(newSiteProperties));
 				}
@@ -296,6 +295,7 @@ sap.ui.define([
 				this.oDialog.attachAfterClose(function() {
 					this.oDialog.destroy();
 					this.oDialog = null;
+					this.initialCreateTicketOpened = true;
 				}.bind(this));
 				this.getView().addDependent(this.oDialog);
 				this.oDialog.attachAfterOpen(function() {
